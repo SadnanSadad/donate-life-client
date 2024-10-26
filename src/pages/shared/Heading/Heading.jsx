@@ -27,7 +27,7 @@ const Heading = () => {
         <li><NavLink to="blood-request" style={activeNav}>Blood Request</NavLink></li>
         {
             loader ?
-                <div className="mt-12 text-center">
+                <div className="mt-3 text-center">
                     <span className="loading loading-spinner loading-sm"></span>
                 </div> :
                 <>
