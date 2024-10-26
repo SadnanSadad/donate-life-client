@@ -1,0 +1,20 @@
+[
+    {
+        "name": "John Doe",
+        "bloodType": "A+",
+        "location": "New York",
+        "phone": "+1 234-567-8901"
+    },
+    {
+        "name": "Jane Smith",
+        "bloodType": "O-",
+        "location": "Los Angeles",
+        "phone": "+1 987-654-3210"
+    },
+    {
+        "name": "Mike Johnson",
+        "bloodType": "B+",
+        "location": "Chicago",
+        "phone": "+1 555-123-4567"
+    }
+]
