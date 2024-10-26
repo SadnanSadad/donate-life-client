@@ -1,22 +1,30 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import HelmetHook from "../../hooks/HelmetHook";
-import useAuth from "../../hooks/useAuth";
-import image from "../../assets/user.png"
+import image from "../../../assets/user.png"
+import HelmetHook from "../../../hooks/HelmetHook";
+import useAuth from "../../../hooks/useAuth";
+import { BiDonateBlood } from "react-icons/bi";
 
 const Heading = () => {
 
     const { loader, user, logOut } = useAuth();
 
-    const handleLogout = ()=>{
+    const handleLogout = () => {
         logOut()
     }
 
+    const activeNav = ({ isActive }) => {
+        return {
+            backgroundColor: isActive ? 'red' : '#FEE2E2',
+            fontWeight: isActive ? '600' : 'normal',
+            color: isActive ? 'white' : 'black'
+        }
+    }
+
     const navLinks = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="all-plants">All Plants</NavLink></li>
-        <li><NavLink to="fruit">Fruit Plants</NavLink></li>
-        <li><NavLink to="flower">Flower Plants</NavLink></li>
-        <li><NavLink to="shops">Shops</NavLink></li>
+        <li><NavLink to="/" style={activeNav}>Home</NavLink></li>
+        <li><NavLink to="about-us" style={activeNav}>About Us</NavLink></li>
+        <li><NavLink to="search-donors" style={activeNav}>Search Donors</NavLink></li>
+        <li><NavLink to="blood-request" style={activeNav}>Blood Request</NavLink></li>
         {
             loader ?
                 <div className="mt-12 text-center">
@@ -26,7 +34,7 @@ const Heading = () => {
                     {
                         user ?
                             <div className="dropdown dropdown-bottom dropdown-end">
-                                <li tabIndex={0} role="button" ><img src={image} className="w-14"/></li>
+                                <li tabIndex={0} role="button" ><img src={image} className="w-14" /></li>
                                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                                     <li className="p-2 font-semibold">{user.displayName}</li>
 
@@ -37,7 +45,7 @@ const Heading = () => {
                             </div>
 
                             :
-                            <li><NavLink to="login">Login</NavLink></li>
+                            <li><NavLink to="login" style={activeNav}>Login</NavLink></li>
 
                     }
                 </>
@@ -49,10 +57,9 @@ const Heading = () => {
 
     const pageTitles = {
         '/': 'Home',
-        '/all-plants': 'All Plants',
-        '/fruit': 'Fruit Plants',
-        '/flower': 'Flower Plants',
-        '/shops': 'Shops',
+        '/about-us': 'About Us',
+        '/search-donors': 'Donor List',
+        '/blood-request': 'Blood Request',
         '/login': 'Login',
         '/register': 'Register',
     };
@@ -65,7 +72,7 @@ const Heading = () => {
 
             {/* Navbar */}
             <div className="">
-                <div className="navbar bg-base-100 ">
+                <div className="navbar bg-red-100 ">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -88,10 +95,10 @@ const Heading = () => {
                                 {navLinks}
                             </ul>
                         </div>
-                        <Link to="/" className="btn btn-ghost text-xl">BaganBari</Link>
+                        <Link to="/" className="btn btn-ghost text-xl text-red-700"><BiDonateBlood></BiDonateBlood> DonateLife</Link>
                     </div>
                     <div className="navbar-end hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1">
+                        <ul className="menu menu-horizontal px-1 gap-2">
                             {navLinks}
                         </ul>
                     </div>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const HelmetHook = ({title}) => {
     return (
         <Helmet>
-            <title>BaganBari | {title}</title>
+            <title>DonateLife | {title}</title>
         </Helmet>
     );
 };

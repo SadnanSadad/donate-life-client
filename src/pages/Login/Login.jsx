@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
 import { toast, ToastContainer, Zoom } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { useState } from "react";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
 
@@ -43,13 +43,13 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero bg-base-200 min-h-screen">
+            <div className="hero bg-red-100 min-h-screen">
                 <div className="hero-content flex-col gap-6">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-2xl lg:text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-2xl lg:text-5xl font-bold text-red-700">Login now!</h1>
                     </div>
                     <div className="card bg-base-100 w-full shadow-2xl">
-                        <form className="card-body" onSubmit={handleSignIn}>
+                        <form className="card-body " onSubmit={handleSignIn}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

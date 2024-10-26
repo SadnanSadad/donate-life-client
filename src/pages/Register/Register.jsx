@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 import { toast, ToastContainer, Zoom } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
@@ -58,10 +58,10 @@ const Register = () => {
     return (
         <div>
 
-            <div className="hero bg-base-200 min-h-screen">
+            <div className="hero bg-red-100 min-h-screen">
                 <div className="hero-content flex-col gap-6">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-2xl lg:text-4xl font-bold">Register now!</h1>
+                        <h1 className="text-2xl lg:text-4xl font-bold text-red-700">Register now!</h1>
                     </div>
                     <div className="card bg-base-100 w-full shadow-2xl">
                         <form className="card-body" onSubmit={handleRegister}>
