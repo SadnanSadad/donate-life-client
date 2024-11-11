@@ -1,0 +1,82 @@
+[
+    {
+        "name": "John Doe",
+        "bloodType": "A+",
+        "location": "New York",
+        "phone": "+1 234-567-8901",
+        "last_donation": "2023-06-15",
+        "status": "Active"
+    },
+    {
+        "name": "Jane Smith",
+        "bloodType": "O-",
+        "location": "Los Angeles",
+        "phone": "+1 987-654-3210",
+        "last_donation": "2022-12-03",
+        "status": "Inactive"
+    },
+    {
+        "name": "Mike Johnson",
+        "bloodType": "B+",
+        "location": "Chicago",
+        "phone": "+1 555-123-4567",
+        "last_donation": "2024-03-20",
+        "status": "Active"
+    },
+    {
+        "name": "Emily Davis",
+        "bloodType": "AB+",
+        "location": "San Francisco",
+        "phone": "+1 321-654-9870",
+        "last_donation": "2022-11-12",
+        "status": "Inactive"
+    },
+    {
+        "name": "William Brown",
+        "bloodType": "O+",
+        "location": "Dallas",
+        "phone": "+1 415-987-6543",
+        "last_donation": "2023-09-25",
+        "status": "Active"
+    },
+    {
+        "name": "Olivia Wilson",
+        "bloodType": "A-",
+        "location": "Boston",
+        "phone": "+1 718-123-7890",
+        "last_donation": "2023-07-10",
+        "status": "Inactive"
+    },
+    {
+        "name": "James Miller",
+        "bloodType": "B-",
+        "location": "Miami",
+        "phone": "+1 512-234-5678",
+        "last_donation": "2023-02-18",
+        "status": "Active"
+    },
+    {
+        "name": "Sophia Taylor",
+        "bloodType": "AB-",
+        "location": "Seattle",
+        "phone": "+1 206-987-6543",
+        "last_donation": "2022-10-05",
+        "status": "Inactive"
+    },
+    {
+        "name": "Benjamin Moore",
+        "bloodType": "O+",
+        "location": "Austin",
+        "phone": "+1 713-765-4321",
+        "last_donation": "2023-12-15",
+        "status": "Active"
+    },
+    {
+        "name": "Isabella Anderson",
+        "bloodType": "A+",
+        "location": "Denver",
+        "phone": "+1 720-654-1230",
+        "last_donation": "2024-01-22",
+        "status": "Inactive"
+    }
+]
