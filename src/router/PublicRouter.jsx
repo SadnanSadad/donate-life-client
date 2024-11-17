@@ -16,6 +16,7 @@ import DonorList from "../pages/DashBoard/Admin/DonorList/DonorList";
 import BloodReqAdmin from "../pages/DashBoard/Admin/BloodReqAdmin/BloodReqAdmin";
 import UserDashboard from "../pages/DashBoard/User/UserDashboard/UserDashboard";
 import MessageBox from "../pages/DashBoard/User/MessageBox/MessageBox";
+import MyRequests from "../pages/DashBoard/User/MyRequests/MyRequests";
 
 const router = createBrowserRouter([
     {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
             {
                 path: "user-home",
                 element: <UserDashboard></UserDashboard>
+            },
+            {
+                path: "my-requests",
+                element: <MyRequests></MyRequests>
             },
             {
                 path: "message-box",

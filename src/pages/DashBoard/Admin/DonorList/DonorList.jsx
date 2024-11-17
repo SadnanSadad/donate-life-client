@@ -86,7 +86,7 @@ const DonorList = () => {
                         <span className="loading loading-spinner loading-lg"></span>
                     </div>
                  :
-                    <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+                    <main className="flex-1 overflow-x-auto overflow-y-auto bg-gray-100 p-6">
                         <div className="flex justify-between items-center mb-6">
                             <h1 className="text-3xl font-semibold text-gray-800">Donors</h1>
                         </div>

@@ -2,9 +2,11 @@ import { useState } from "react";
 import useAxios from "../../../hooks/useAxios";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import useAuth from "../../../hooks/useAuth";
 
 const BloodRequest = () => {
 
+    const {user} = useAuth();
     const axiosInstance = useAxios();
 
     const [bloodType, setBloodType] = useState("");
@@ -46,7 +48,8 @@ const BloodRequest = () => {
             bloodType,
             bloodQuantity,
             urgency,
-            status: "Pending"
+            status: "Pending",
+            email: user?.email
         }
 
         axiosInstance.post('/blood-req', bloodReqInfo)

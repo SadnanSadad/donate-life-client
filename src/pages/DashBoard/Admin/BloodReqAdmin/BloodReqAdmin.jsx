@@ -97,7 +97,7 @@ const BloodReqAdmin = () => {
                             <h1 className="text-3xl font-semibold text-gray-800">Blood Requests</h1>
                         </div>
 
-                        <div className="bg-white shadow-md rounded-lg overflow-hidden">
+                        <div className="bg-white shadow-md rounded-lg overflow-x-auto">
                             <table className="table w-full">
                                 <thead>
                                     <tr>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import image from '../../../../assets/faq_img.jpg'
 
 const FAQ = () => {
 
@@ -42,58 +43,66 @@ const FAQ = () => {
         setBgAccording((prevIndex) => (prevIndex === index ? null : index));
 
     return (
-        <div className="bg-red-50 py-16">
-            <div className="my-8 text-center">
-                <h2 className="text-5xl lg:text-6xl font-semibold text-red-700">FAQ</h2>
+        <div className="bg-red-50 p-2 lg:p-8">
+            <div className="lg:mb-8 text-center">
+                <h2 className="text-3xl lg:text-6xl font-semibold text-red-700">FAQ</h2>
             </div>
 
-            <div className="flex gap-3 flex-col w-full">
-                {accordingData?.map((according, index) => (
-                    <article key={index} className="bg-[#e5eaf2] rounded">
-                        <div
-                            className="flex gap-2 cursor-pointer items-center justify-between w-full bg-red-600 p-3 rounded"
-                            onClick={() => handlebgAccording(index)}
-                        >
-                            <h2 className={`text-[#ffffff] font-[600] text-[1.2rem]`}>
-                                {according.title}
-                            </h2>
-                            <svg
-                                className="fill-[#ffffff] shrink-0 ml-8"
-                                width="16"
-                                height="16"
-                                xmlns="http://www.w3.org/2000/svg"
+            <div className="flex flex-col lg:flex-row max-w-6xl mx-auto">
+                <div className="lg:w-1/2">
+                    <img src={image} alt="FAQ Image" />
+                </div>
+
+                <div className="flex gap-3 flex-col lg:w-1/2">
+                    {accordingData?.map((according, index) => (
+                        <article key={index} className="bg-[#e5eaf2] rounded">
+                            <div
+                                className="flex gap-2 cursor-pointer items-center justify-between w-full bg-red-600 p-3 rounded"
+                                onClick={() => handlebgAccording(index)}
                             >
-                                <rect
-                                    y="7"
+                                <h2 className={`text-[#ffffff] font-[600] text-base lg:text-[1.2rem]`}>
+                                    {according.title}
+                                </h2>
+                                <svg
+                                    className="fill-[#ffffff] shrink-0 ml-8"
                                     width="16"
-                                    height="2"
-                                    rx="1"
-                                    className={`transform origin-center transition duration-200 ease-out ${bgAccording === index && "!rotate-180"
-                                        }`}
-                                />
-                                <rect
-                                    y="7"
-                                    width="16"
-                                    height="2"
-                                    rx="1"
-                                    className={`transform origin-center rotate-90 transition duration-200 ease-out ${bgAccording === index && "!rotate-180"
-                                        }`}
-                                />
-                            </svg>
-                        </div>
-                        <div
-                            className={`grid transition-all duration-300 overflow-hidden ease-in-out bg-gray-100 ${bgAccording === index
-                                ? "grid-rows-[1fr] opacity-100 p-3"
-                                : "grid-rows-[0fr] opacity-0"
-                                }`}
-                        >
-                            <div className="text-black text-base font-semibold overflow-hidden">
-                                {according.description}
+                                    height="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        y="7"
+                                        width="16"
+                                        height="2"
+                                        rx="1"
+                                        className={`transform origin-center transition duration-200 ease-out ${bgAccording === index && "!rotate-180"
+                                            }`}
+                                    />
+                                    <rect
+                                        y="7"
+                                        width="16"
+                                        height="2"
+                                        rx="1"
+                                        className={`transform origin-center rotate-90 transition duration-200 ease-out ${bgAccording === index && "!rotate-180"
+                                            }`}
+                                    />
+                                </svg>
                             </div>
-                        </div>
-                    </article>
-                ))}
+                            <div
+                                className={`grid transition-all duration-300 overflow-hidden ease-in-out bg-gray-100 ${bgAccording === index
+                                    ? "grid-rows-[1fr] opacity-100 p-3"
+                                    : "grid-rows-[0fr] opacity-0"
+                                    }`}
+                            >
+                                <div className="text-black text-sm lg:text-base font-semibold overflow-hidden">
+                                    {according.description}
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </div>
+
+
         </div>
     );
 };

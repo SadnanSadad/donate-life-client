@@ -27,7 +27,7 @@ const ReadyPart = () => {
                 <div className="space-x-2">
 
                     <Link to="/login"
-                        className="relative inline-flex items-center justify-center px-8 py-3.5 overflow-hidden font-mono  tracking-tighter text-black bg-red-200 rounded-full group">
+                        className="relative inline-flex items-center justify-center px-4 lg:px-8 py-1 lg:py-3.5 overflow-hidden font-mono  tracking-tighter text-black bg-red-200 rounded-full group ">
                         <span
                             className="absolute w-0 h-0 transition-all duration-500 ease-out bg-red-700 rounded-full group-hover:w-56 group-hover:h-56"></span>
                         <span
