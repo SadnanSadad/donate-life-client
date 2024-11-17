@@ -7,34 +7,28 @@ const Footer = () => {
             <footer className="footer text-base-content p-10">
                 <aside className="mt-8">
                     <p className="text-lg">
-                    <Link to="/" className="flex items-center gap-2 font-semibold text-xl text-red-700"><BiDonateBlood></BiDonateBlood> DonateLife Ltd.</Link>
+                    <Link to="/" className="flex items-center gap-2 font-semibold text-xl text-red-700"><BiDonateBlood></BiDonateBlood><Link to="/"> DonateLife Ltd.</Link></Link>
                         <br />
                         Saving lives, one drop at a time <br /> Join us in the journey to give and find blood easily.
                     </p>
                 </aside>
                 <nav>
                     <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <Link to="/search-donors" className="link link-hover">Search Donors</Link>
+                    <Link to="/blood-request" className="link link-hover">Blood Request</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <Link to="/about-us" className="link link-hover">About us</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <Link to="/terms" className="link link-hover">Terms and condition</Link>
+                    <Link to="/policies" className="link link-hover">Privacy policy</Link>
                 </nav>
 
             </footer>
-            <p className="footer-center text-sm">Copyright © {new Date().getFullYear()} - All right reserved by <span className="font-semibold text-red-700">DonateLife</span> Ltd.</p>
+            <p className="footer-center text-sm">Copyright © {new Date().getFullYear()} - All right reserved by <span className="font-semibold text-red-700"><Link to="/">DonateLife</Link></span> Ltd.</p>
         </div>
     );
 };

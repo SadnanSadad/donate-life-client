@@ -4,11 +4,13 @@ import HelmetHook from "../../../../hooks/HelmetHook";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { FaTrashAlt } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 
 const AllUsers = () => {
 
     const [users, setUsers] = useState([]);
     const axiosInstance = useAxios();
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         axiosInstance.get("/users")
@@ -35,30 +37,31 @@ const AllUsers = () => {
             });
     };
 
+    const filteredDonors = users.filter(donor =>
+        donor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        donor.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        donor.role.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <>
             <HelmetHook title={"All Users"} />
 
+            <header className="bg-white shadow-md p-4 flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                    <input
+                        type="search"
+                        placeholder="Search donors..."
+                        className="input input-bordered w-64"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+            </header>
+
             <div className="container mx-auto px-4 py-6">
-                <div className='flex justify-between items-center mb-4'>
+                <div className='mb-4'>
                     <h2 className="text-3xl font-semibold">All Users</h2>
-                    <div className="relative">
-                        <input
-                            type="text"
-                            className="input border border-gray-300 rounded-lg p-2 pr-10"
-                            placeholder="Search User"
-                        />
-                        <button className="absolute right-2 top-2">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 16 16"
-                                fill="currentColor"
-                                className="w-4 h-4 opacity-70"
-                            >
-                                <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
-                            </svg>
-                        </button>
-                    </div>
                 </div>
 
                 <div className="overflow-x-auto">
@@ -73,7 +76,7 @@ const AllUsers = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {users.map((user, idx) => (
+                            {filteredDonors.map((user, idx) => (
                                 <tr key={user._id} className="border-b hover:bg-gray-100">
                                     <td className="px-4 py-2">{idx + 1}</td>
                                     <td className="px-4 py-2">{user.name}</td>
@@ -91,7 +94,7 @@ const AllUsers = () => {
                         </tbody>
                     </table>
                 </div>
-                <ToastContainer/>
+                <ToastContainer />
             </div>
         </>
     );

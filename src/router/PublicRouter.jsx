@@ -17,6 +17,9 @@ import BloodReqAdmin from "../pages/DashBoard/Admin/BloodReqAdmin/BloodReqAdmin"
 import UserDashboard from "../pages/DashBoard/User/UserDashboard/UserDashboard";
 import MessageBox from "../pages/DashBoard/User/MessageBox/MessageBox";
 import MyRequests from "../pages/DashBoard/User/MyRequests/MyRequests";
+import Terms from "../pages/shared/Terms/Terms";
+import Policies from "../pages/shared/Terms/Policies";
+import Contact from "../pages/mainPages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +50,19 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
+            },
+
+            {
+                path: '/terms',
+                element: <Terms></Terms>
+            },
+            {
+                path: '/policies',
+                element: <Policies></Policies>
             },
         ]
     },

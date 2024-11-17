@@ -31,6 +31,7 @@ const Heading = () => {
     const navLinks = <>
         <li><NavLink to="/" style={activeNav}>Home</NavLink></li>
         <li><NavLink to="about-us" style={activeNav}>About Us</NavLink></li>
+        <li><NavLink to="contact" style={activeNav}>Contact Us</NavLink></li>
         {
             user &&
             <>

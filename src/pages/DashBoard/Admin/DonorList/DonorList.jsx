@@ -67,9 +67,6 @@ const DonorList = () => {
             <HelmetHook title="Donor List" />
             <div className="flex-1 flex flex-col overflow-hidden">
                 <header className="bg-white shadow-md p-4 flex items-center justify-between">
-                    <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="md:hidden">
-                        <FiMenu className="h-6 w-6" />
-                    </button>
                     <div className="flex items-center space-x-4">
                         <input
                             type="search"
